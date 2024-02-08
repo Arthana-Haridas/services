@@ -4,7 +4,11 @@ jobs:
     - dist: xenial
       virt: vm
       language: c
-      arch: amd64
+      arch: 
+        - mysql
+        - postgresql
+        - redis-server
+      
       script:
         - clang -coverage -O0 hello_world.c -o hello_world
         - ./hello_world
