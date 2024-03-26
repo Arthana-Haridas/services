@@ -7,9 +7,7 @@ jobs:
       arch: 
         - mysql
         - postgresql
-        - redis-server
-      before_script:
-        - psql -c 'create database travis_ci_test;' -U postgres   
+        - redis-server  
       script:
         - clang -coverage -O0 hello_world.c -o hello_world
         - ./hello_world
